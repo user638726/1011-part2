@@ -214,14 +214,15 @@
 ?> 
  <h3>矩形含對角線練習<h3>
     <?php
-            for($i=0 ; $i<6; $i++){
-                for($j=0 ; $j<6 ; $j++){
-                    if($i==0 || $i==5 ){
+            $width=10;
+            for($i=0 ; $i<$width; $i++){
+                for($j=0 ; $j<$width ; $j++){
+                    if($i==0 || $i==($width-1) ){
                         echo "*";
                     }  
-                elseif($j==0 || $j==5){
+                elseif($j==0 || $j==($width-1)){
                         echo "*";
-                }elseif($i==$j || $j==(5-$i)){
+                }elseif($i==$j || $j==(($width-1)-$i)){
                         echo "*";
                 }else{
                     echo "&nbsp";
@@ -233,15 +234,16 @@
     ?>
     <h3>矩形含對角線練習<h3>
     <?php
-          for($i=0 ; $i<5; $i++){
-            for($j=0 ; $j<5 ; $j++){
-                if($i==0 || $i==4 ){
+          $width=8;
+          for($i=0 ; $i<$width; $i++){
+            for($j=0 ; $j<$width ; $j++){
+                if($i==0 || $i==($width-1) ){
                     echo "*";
                 }  
-            elseif($j==0 || $j==4){
+            elseif($j==0 || $j==($width-1)){
                     echo "*";
             }
-            elseif($i==$j|$j==(4-$i)){
+            elseif($i==$j|$j==(($width-1)-$i)){
                 echo "*";
             }
             else{
