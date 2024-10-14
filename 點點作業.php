@@ -254,6 +254,69 @@
               echo "<br>";
     }
     ?>
+    <h3>菱形中間空白練習<h3>
+    <?php
+       $size=11;
+         for($i=0;$i<$size;$i++){
+
+            if($i>(floor($size/2))){
+                $k1=$i-(floor($size/2));
+                $j1=2*($i-(2*($i-(floor($size/2)))))+1;
+            }
+         else{
+             $k1=(floor($size/2))-$i;
+             $j1=(2*$i+1);
+         }
+          for($k=0;$k<$k1;$k++){
+
+            echo "&nbsp";
+          }
+          for($j=0;$j<$j1;$j++){
+          if($j==0 || $j==($j1-1)){
+          
+               echo "*";
+          }
+           else{
+               echo "&nbsp";
+          }
+        
+        }
+        echo "<br>";
+        }
+    ?>
+    
+    <h3>菱形對角線<h3>
+ <?php 
+ $size=21;
+for($i=0;$i<$size;$i++){
+    if($i>(floor($size/2))){
+        $k1=$i-(floor($size/2));
+        $j1=2*($i-(2*($i-(floor($size/2)))))+1;
+    }else{
+        $k1=(floor($size/2))-$i;
+        $j1=(2*$i+1);
+    }
+
+    for($k=0;$k<$k1;$k++){
+        echo "&nbsp;";
+    }
+
+    for($j=0;$j<$j1;$j++){
+        if($j==0 || $j==$j1-1 || $i==(floor($size/2)) || $j==floor(($j1-1)/2) ){
+            echo "*";
+        }else{
+            echo "&nbsp;";
+        }
+
+    }
+    echo "<br>";
+
+}
+?>
+
+      
+      
+
        
 </body>
 </html>
