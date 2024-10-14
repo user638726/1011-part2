@@ -211,7 +211,47 @@
               echo "<br>";
 
     }
-?>  
+?> 
+ <h3>矩形含對角線練習<h3>
+    <?php
+            for($i=0 ; $i<6; $i++){
+                for($j=0 ; $j<6 ; $j++){
+                    if($i==0 || $i==5 ){
+                        echo "*";
+                    }  
+                elseif($j==0 || $j==5){
+                        echo "*";
+                }elseif($i==$j || $j==(5-$i)){
+                        echo "*";
+                }else{
+                    echo "&nbsp";
+                }
+            }
+                  echo "<br>";
+    
+        }
+    ?>
+    <h3>矩形含對角線練習<h3>
+    <?php
+          for($i=0 ; $i<5; $i++){
+            for($j=0 ; $j<5 ; $j++){
+                if($i==0 || $i==4 ){
+                    echo "*";
+                }  
+            elseif($j==0 || $j==4){
+                    echo "*";
+            }
+            elseif($i==$j|$j==(4-$i)){
+                echo "*";
+            }
+            else{
+                    echo "&nbsp";
+            }
+            
+        }
+              echo "<br>";
+    }
+    ?>
        
 </body>
 </html>
