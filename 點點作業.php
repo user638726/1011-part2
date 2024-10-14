@@ -196,19 +196,22 @@
 
     <h3>矩形</h3>
     <?php
-          for($i=0 ; $i>5; $i++){
+          for($i=0 ; $i<5; $i++){
             for($j=0 ; $j<5 ; $j++){
-                if(i==0 || $i==4 )
-                echo "*";
-                elseif($j==0 || $j==4){
+                if($i==0 || $i==4 ){
                     echo "*";
-                }else{
+                }  
+            elseif($j==0 || $j==4){
+                    echo "*";
+            }else{
                     echo "&nbsp";
-                }
             }
-            echo "<br>";
+            
         }
-    ?>  
+              echo "<br>";
+
+    }
+?>  
        
 </body>
 </html>
