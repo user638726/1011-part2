@@ -257,6 +257,11 @@
     <h3>菱形中間空白練習<h3>
     <?php
        $size=11;
+       if(($size%2)==0){
+         $size++;
+       }else{
+          true;
+        }
          for($i=0;$i<$size;$i++){
 
             if($i>(floor($size/2))){
@@ -283,11 +288,17 @@
         }
         echo "<br>";
         }
+    
     ?>
     
     <h3>菱形對角線<h3>
  <?php 
  $size=21;
+ if(($size%2)==0){
+    $size++;
+}else{
+     true;
+}
 for($i=0;$i<$size;$i++){
     if($i>(floor($size/2))){
         $k1=$i-(floor($size/2));
