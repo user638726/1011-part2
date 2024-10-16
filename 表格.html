@@ -13,7 +13,7 @@
         }
         td,th{
              border: 1px solid black;
-             max-width:1024px;   
+             
         }
     </Style>
 </head>
@@ -21,9 +21,11 @@
     <table>
         <!----table row-->
         <tr>
-         <!---table column-->   
-        <td>1</td>
-        <td>2</td>
+         <!---table column--> 
+         <!--colspan-->
+         <!--rowspan--->  
+        <td colspan=2>1</td>
+        <!----<td>2</td>---->
         <td>3</td>
          </tr>
 
@@ -31,16 +33,22 @@
             <!---table column-->   
            <td>1</td>
            <td>2</td>
-           <td>3</td>
-            </tr>
-
-
-            <tr>
-                <!---table column-->   
-               <td>1</td>
-               <td>2</td>
-               <td>3</td>
-                </tr>
+           <td rowspan="2">
+            6
+        </td>
+    </tr>
+    <tr>
+        <!-- table data /table column -->
+        <td>
+            7
+        </td>
+        <td>
+            8
+        </td>
+        <!-- <td>
+            9
+        </td> -->
+    </tr>
     </table>
 </body>
 </html>
