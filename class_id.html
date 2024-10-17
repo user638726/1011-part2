@@ -91,11 +91,11 @@
     <div class="box bg_color_2"></div>
     <div class="box bg_color_3"></div>
 
-    <h1>id選擇器</h1>
-    <p>一份文件裡面，只允許一個獨一無二的id，就像身分證不能重複</p>
-    <p>對元素(標籤)設定id可以用程式快速取得</p>
-    <h2>網頁區塊名稱會用id來命名</h2>
+    <h1>id 選擇器</h1>
+    <p>一份文件裡面，只允許一個獨一無二的 id，就像身分證不能重複。</p>
+    <p>對元素(標籤)設定 id，可以用程式快速取得它。</p>
 
+    <h2>網頁區塊名稱會用 id 來命名</h2>
     <div id="main">
         <div id="header"></div>
         <div id="left"></div>
@@ -103,7 +103,16 @@
         <div id="footer"></div>
 
     </div>
+    <h2>對元素(標籤)設定 id，用於程式</h2>
+    <button id="btn">按鈕</button>
 
+    <script>
+        const btn = document.getElementById('btn')    // 用程式取得 id
+        // 讓按鈕被點擊時，跳出視窗
+        btn.onclick = function () {
+            alert('Hello World')
+        }
+    </script>
 
 </body>
 
