@@ -10,6 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <style>
+        body {
+            /*對整份文件做設定*/
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /*對部分文字做設定*/
         .font-style {
             /*單位可以是px 、rem、em*/
             font-size: 30px;
@@ -27,12 +33,21 @@
             font-optical-sizing: auto;
             font-weight: normal;
             font-style: normal;
+            font-size: 30px;
+        }
+
+        .text-style {
+            font-size: 30px;
+            /*-文字對齊-*/
+            text-align: center;
+            /*underline*/
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-    !<!---
+    <!---
     10進位 0~9
     
     
@@ -40,15 +55,18 @@
     
     -->
 
-    <h1>
+    <h1 class="google-font">
         1.font樣式設定
     </h1>
-    <div class="font-style">
+    <div class="font-style google-font ">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas dicta ullam mollitia
     </div>
-    <h1>google font</h1>
+    <h1 class="google-font">2.google font</h1>
     <p class="google-font">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, suscipit.</p>
-    <h2>3.text樣式設定</h2>
+    <h2 class="text-style">3.text樣式設定
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, ipsa?</p>
+    </h2>
+
 </body>
 
 </html>
