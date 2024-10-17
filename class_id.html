@@ -37,36 +37,63 @@
         }
 
         #main {
+            /* 寬 */
             width: 1024px;
+            /* 高 */
             height: 768px;
-            border: 1px solid black;
+            /* 邊框 */
+            border: 1px solid #000;
         }
 
         #header {
             width: 1024px;
-            height: 200px;
-            background: yellow;
-        }
-
-        #right {
-            width: 924px;
-            height: 568px;
-            background: lightcoral;
-            float: right;
+            height: 100px;
+            background: lightblue;
         }
 
         #left {
             width: 100px;
             height: 568px;
             background: lightgreen;
+            /* 浮動左側 */
             float: left;
+        }
+
+        #right {
+            width: 924px;
+            height: 568px;
+            background: lightcoral;
+            /* 浮動右側 */
+            float: right;
         }
 
         #footer {
             width: 1024px;
             height: 100px;
             background: lemonchiffon;
+            /* 清除浮動 */
             clear: both;
+        }
+
+        /*主流排版display:flex 彈性盒flex box*/
+        /*後代選擇器*/
+        nav p {
+            color: blue;
+        }
+
+        /*子代選擇器*/
+        nav>p {
+            color: red;
+        }
+
+        .menu>.list-item {
+            font-size: 30px;
+            color: red;
+        }
+
+
+        ul>li {
+            color: blue;
         }
     </style>
 </head>
@@ -103,9 +130,12 @@
         <div id="footer"></div>
 
     </div>
+
+    <hr>
+
+
     <h2>對元素(標籤)設定 id，用於程式</h2>
     <button id="btn">按鈕</button>
-
     <script>
         const btn = document.getElementById('btn')    // 用程式取得 id
         // 讓按鈕被點擊時，跳出視窗
@@ -113,7 +143,51 @@
             alert('Hello World')
         }
     </script>
+    <hr>
+    <h1>後代選擇器與子代選擇器</h1>
+    <nav>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </nav>
 
+    <hr>
+    <!--ul>li*5-->
+    <ul class="menu">
+        <li class="list-item">item</li>
+        <li class="list-item">item</li>
+        <li class="list-item">item</li>
+        <li class="list-item">item</li>
+        <li class="list-item">item</li>
+    </ul>
+
+    <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+
+    <!--table>tr*3>td{在td裡面寫文字}*3-->
+    <table>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+        <tr>
+            <td>item</td>
+            <td>item</td>
+            <td>item</td>
+        </tr>
+    </table>
 </body>
 
 </html>
