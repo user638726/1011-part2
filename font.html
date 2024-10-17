@@ -53,6 +53,15 @@
             /*也可以設定倍數(無單位)*/
             line-height: 2
         }
+
+        .text-shadow {
+            font-size: 100px;
+            /*水平位移(+為右，-為左)、垂直位移(+為下，-為上)、模糊半徑、顏色*/
+            /*多重陰影，組跟組之間用逗點隔開*/
+            text-shadow:
+                10px 20px 5px rgba(0, 0, 0, 0.5),
+                50px -20px 10px rgba(234, 444, 30, 0.5);
+        }
     </style>
 </head>
 
@@ -76,8 +85,12 @@
     <h1 class="google-font">2.google font</h1>
     <p class="google-font">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, suscipit.</p>
     <h2 class="text-style">3.text樣式設定
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, ipsa?</p>
+        <p class="text-style">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, ipsa?</p>
     </h2>
+
+    <h2>4.文字陰影</h2>
+    <p class="text-shadow">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas eius atque perferendis dolorem
+        vel reiciendis quia soluta illum, non dolorum.</p>
 
 </body>
 
