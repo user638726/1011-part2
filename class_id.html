@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+          class的寫法
+        1.class-name
+        2.命名不可以用數字開頭，123abc是不合法的，abc123是合法的
+        3.有區分大小寫，.mycolor與 .myColor是不同的
+        4.可以用中文命名，但不建議
+        */
+        .mycolor {
+            color: deepskyblue;
+        }
+
+        /*劃寬高盒子，有三個不同的背景顏色*/
+        .box {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .bg_color_1 {
+            background-color: black;
+        }
+
+        .bg_color_2 {
+            background-color: deepskyblue;
+        }
+
+        .bg_color_3 {
+            background-color: yellow;
+        }
+
+        #main {
+            width: 1024px;
+            height: 768px;
+            border: 1px solid black;
+        }
+
+        #header {
+            width: 1024px;
+            height: 200px;
+            background: yellow;
+        }
+
+        #right {
+            width: 924px;
+            height: 568px;
+            background: lightcoral;
+            float: right;
+        }
+
+        #left {
+            width: 100px;
+            height: 568px;
+            background: lightgreen;
+            float: left;
+        }
+
+        #footer {
+            width: 1024px;
+            height: 100px;
+            background: lemonchiffon;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <!---class與id選擇器-->
+    <h1>CSS的選擇器</h1>
+    <p>CSS有非常多選擇器，幫助我們在撰寫程式，依照該情境選擇到我們要的目標。</p>
+
+    <h1 class="mycolor">class選擇器</h1>
+    <p>特性：具有重複使用的特性，是使用率最高的選擇器</p>
+    <a class="mycolor" href="#">超連結</a>
+
+    <p>特性2</p>
+
+    <p>抽離相同的屬性寫成class重複使用，再對不一樣的屬性定義class</p>
+    <p>class可以一直增加</p>
+    <!---emmet .box => <div class="box"><div>-->
+    <!---emmet .box*4 => <div class="box"><div>*4-->
+    <div class="box "></div>
+    <div class="box bg_color_1"></div>
+    <div class="box bg_color_2"></div>
+    <div class="box bg_color_3"></div>
+
+    <h1>id選擇器</h1>
+    <p>一份文件裡面，只允許一個獨一無二的id，就像身分證不能重複</p>
+    <p>對元素(標籤)設定id可以用程式快速取得</p>
+    <h2>網頁區塊名稱會用id來命名</h2>
+
+    <div id="main">
+        <div id="header"></div>
+        <div id="left"></div>
+        <div id="right"></div>
+        <div id="footer"></div>
+
+    </div>
+
+
+</body>
+
+</html>
