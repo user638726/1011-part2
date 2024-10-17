@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            font-size: 16px;
+        }
+
+
         body {
             /*對整份文件做設定*/
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -92,6 +97,30 @@
     <p class="text-shadow">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas eius atque perferendis dolorem
         vel reiciendis quia soluta illum, non dolorum.</p>
 
+
+    <h2>5.rem與em差異</h2>
+    <h3>rem</h3>
+    <p>為root預設 font-size的倍數，預設為16px</p>
+    <p>:root 選擇器，指的是根元素html</p>
+    <div style="font-size:1rem;">
+        font
+        <div style="font-size:2rem;">
+            font
+            <div style="font-size:3rem;">font</div>
+        </div>
+    </div>
+
+
+    <h3>em</h3>
+    <p>可能為父層或祖先層 font-size的倍數</p>
+    <p>父層若有設定文字尺寸以它為準，沒有會繼續往外找</p>
+    <div style="font-size:1em;">
+        font
+        <div style="font-size:2em;">
+            font
+            <div style="font-size:3em;">font</div>
+        </div>
+    </div>
 </body>
 
 </html>
