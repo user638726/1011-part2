@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box
+        }
+
+        #relative {
+            /*
+            top、left、right、bottom距離原本的位置偏移
+            left、right同時設定時會依照資料走向為主
+            direction:rtl 調整資料走向(改為右邊開始要放在body style)
+            top、bottom同時設定以top為主
+            */
+            left: 20px;
+            /*relative 相對於原本位置偏移*/
+            position: relative
+        }
+
+        #absolute-out {
+            width: 300px;
+            height: 300px;
+            background: blue;
+            position: relative
+        }
+
+        #absolute-in {
+            /*absolute相對於上層relative位置偏移，都沒有就是body*/
+            position: absolute;
+            /*有寬高時，偏移方式和relative相同*/
+            /*如果元素沒有寬高時，可以利用top 、bottom、right、left拉伸元素*/
+            top: 50px;
+            bottom: 50px;
+            left: 50px;
+            right: 50px;
+            background: skyblue;
+        }
+
+        #fixed {
+            /*
+            fixed相對於瀏覽器視窗的位置
+             */
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: pink;
+        }
+
+        #sticky {
+            position: sticky;
+            background: green;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--div#relative.box-->
+    <div id="relative" class="box">relative</div>
+    <div id="absolute-out" class="box">
+        absolute out
+        <div id="absolute-in">
+            absolute in
+        </div>
+    </div>
+    <div id="fixed" class="box">fixed</div>
+    <div id="sticky" class="box">sticky</div>
+</body>
+
+</html>
