@@ -28,16 +28,48 @@
         p {
             line-height: 3em;
         }
+
+        .inline-block {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            /*display修改元素的顯示方式
+             none:不顯示
+             inline-block：外在排列和inline相同，內部排列和block相同
+             
+             */
+            display: inline-block;
+            text-align: center;
+            /* inline-block 會有4px的間距*
+               margin-left:-4px
+            
+            */
+        }
+
+        /* class是inline-block 但不是第一個*/
+        .inline-block:not(:first-child) {
+
+            margin-left: -4px;
+        }
+
+        }
     </style>
 </head>
 
 <body>
-    <p><span>aagggkk</span>
+    <p>
+        <span>aagggkk</span>
         <img src=" https://picsum.photos/300/200/?random=10">
     </p>
     <div style="height: 30px; line-height: 30px; background-color: gray;">
         aaa
     </div>
+    <div>
+        <div class="inline-block">inline-block</div>
+        <div class="inline-block">inline-block</div>
+        <div class="inline-block">inline-block</div>
+    </div>
+
 </body>
 
 </html>
