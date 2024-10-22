@@ -33,7 +33,7 @@ for ($i = 1; $i <= 9; $i++) {
     <table>
         <thead>
             <tr>
-                <th>×</th>
+                <th></th>
                 <?php for ($j = 1; $j <= 9; $j++): ?>
                     <th><?php echo $j; ?></th>
                 <?php endfor; ?>
