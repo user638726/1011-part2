@@ -10,7 +10,7 @@
     
     $inline=[];
     $a = 1;
-    $b = 100;
+    $b = 38;
     $randomnumber=rand($a,$b);
 
 
