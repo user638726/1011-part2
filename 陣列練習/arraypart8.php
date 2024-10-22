@@ -7,29 +7,21 @@
 </head>
 <body>
 <?php
-$year=2024;
-$yearPart2=[];
-for($year;$year+500;$year++){
-    if($year %4 == 0 && $year%100>0)
-    {
-        
-        $yearPart2[]=$year;
-    } elseif ($year%100==0 && $year%400>0) {
-    
-        
-    
-    }elseif ($year%100==0 && $year%400==0){
-        
-        $yearPart2[]=$year;
+$leap=[];
+
+for($i=2024;$i<=2524;$i++){
+    if($i % 4==0 && ($i % 100 != 0 || $i % 400 == 0)){
+        $leap[]=$i;
+
     }
-    else{
-        
-       } 
+    echo "<pre>";
+    print_r($leap);
+    echo "</pre>"; 
 
 }
-echo "<pre>";
-print_r($yearPart2);
-echo "<pre>";
-?>
+
+?> 
+
+
 </body>
 </html>
