@@ -46,11 +46,16 @@
         }
 }
  echo"<hr>";
+ echo "<table>";
  foreach($nine as $idx => $n){
+    $v=explode("=",$n)[1];
     if($idx%9==8){
-        echo $n . "<br>";
-    }else{
-        echo $n . ",";
+        echo "<td>$v</td></tr>";
+    }elseif($idx%9==0){
+         echo "<tr><td>$v</td>";           
+    }   
+        else{
+        echo "<td>$v<td>";
     }
  }     
       echo "<table>"
