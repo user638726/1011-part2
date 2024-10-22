@@ -11,17 +11,23 @@
     $inline=[];
     $a = 1;
     $b = 38;
-    $randomnumber=rand($a,$b);
-
-
+    $counter=0;
+    
+    
+    while($counter<=6){
+        $randomnumber=rand($a,$b);
+        echo "生成的數字: " . $randomnumber . "\n";
+        $counter++;
     if(in_array($randomnumber,$inline)){
         echo "已有重複的數字\n";
+        break;
     }else{
         $inline[]=$randomnumber;
     }
-    echo "Numbers in array: ";
+ } 
+     echo "Numbers in array: ";
     foreach($inline as $idx){
-        echo $idx;
+        echo $idx . " " ;
     }
     
     
