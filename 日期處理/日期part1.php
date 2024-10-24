@@ -138,6 +138,13 @@ for($i=0;$i<6;$i++){
     for($j=0;$j<7;$j++){
         echo "<td>";
         $dayNum=$i*7 + $j +1 - $firstDayWeek;
+        /*0*7 + 0 + 1= 1 
+          0*7 + 1 + 1= 2
+          0*7 + 2 + 1= 3
+          0*7 + 3 + 1= 4
+          0*7 + 4 + 1 =5
+        先跑裡面，再跑外圈
+        */
         if($dayNum<=date('t') && $dayNum > 0){
             
             echo $dayNum;
