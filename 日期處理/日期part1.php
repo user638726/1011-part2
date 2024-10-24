@@ -63,13 +63,15 @@
         echo date("m月d日 l");
          echo "<br>";
         echo date("m月d日").$weekString[date("l")]['min'];
+        /*l（小写 'L'）	完整文本表示星期几	Sunday 到 Saturday*/ 
         echo "<br>";
         echo date("m月d日").$weekString[date("l")]['short'];
         echo "<br>";
         echo date("m月d日").$weekString[date("l")]['fulltext'];
-        echo "<br>";/*$time=date("y年m月n日",'星期'.'w');*/
+        echo "<br>";
         echo "今天是西元".date("Y年m月d日");
         if(date("N")>5){
+            /*N	ISO 8601 数字表示星期几	1（星期一）到 7（星期天）*/ 
             echo "假日";
         }else{
             echo "上班日";
