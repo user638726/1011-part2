@@ -6,9 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>字串分割</h2>
+    <h2>將”this,is,a,book”依”,”切割後成為陣列</h2>
     <?php
        $str="this,is,a,book";
-       $str=explode(",",$str);
+       $str=explode(",",$str);/*列印出array值*/
        echo "<pre>";
        print_r($str);
        echo "<pre>";
@@ -17,7 +19,8 @@
     <h2>將上例陣列重新組合成“this is a book”</h2>
     <?php
     
-    $str=join(" ",$str);
+    $str=join(" ",$str);/*合併array值*/
+    echo "<pre>";
     echo $str."<br>";
     ?>
     <h2>子字串取用</h2>
