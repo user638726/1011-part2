@@ -7,9 +7,11 @@
 </head>
 <body>
     <?php 
-    echo str_replace("aadw1123","*********","aadw1123")
-    
-    
+    echo str_replace("aadw1123","********","aadw1123");
+    echo "<br>";
+    echo str_replace(['a','a','d','w','1','2','3'],"*",'aaddw123');
+    echo "<br>";
+    echo str_repeat("*",mb_strlen('aaddw123'));
     
     
     
