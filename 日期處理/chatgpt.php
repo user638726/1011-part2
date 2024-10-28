@@ -40,6 +40,15 @@ function draw_calendar($month, $year) {
     $date_info = getdate($first_day);
     $day_of_week = $date_info['wday'];
 
+    // 上一個月的日期
+    $prev_month = $month == 1 ? 12 : $month - 1;
+    $prev_year = $month == 1 ? $year - 1 : $year;
+    $prev_total_days = date('t', mktime(0, 0, 0, $prev_month, 1, $prev_year));
+
+    // 下一個月的日期
+    $next_month = $month == 12 ? 1 : $month + 1;
+    $next_year = $month == 12 ? $year + 1 : $year;
+
     // 日曆標題
     echo "<h2>" . date('F', $first_day) . " " . $year . "</h2>";
     echo "<table border='1'>";
@@ -52,17 +61,23 @@ function draw_calendar($month, $year) {
     }
     echo "</tr><tr>";
 
-    // 空白格子
+    // 填充空白格子（從上一個月開始）
     for ($i = 0; $i < $day_of_week; $i++) {
-        echo "<td></td>";
+        echo "<td>" . ($prev_total_days - $day_of_week + $i + 1) . "</td>";
     }
 
-    // 列出日期
+    // 列出當前月份的日期
     for ($day = 1; $day <= $total_days; $day++) {
         echo "<td>$day</td>";
-        if (($day + $day_of_week) % 7 == 0) {
+        if (($day + $day_of_week) % 7 == 0 && $day < $total_days) {
             echo "</tr><tr>";
         }
+    }
+
+    // 填充空白格子（從下一個月開始）
+    $next_day_offset = (7 - ($day_of_week + $total_days) % 7) % 7;
+    for ($i = 1; $i <= $next_day_offset; $i++) {
+        echo "<td>$i</td>";
     }
 
     echo "</tr>";
