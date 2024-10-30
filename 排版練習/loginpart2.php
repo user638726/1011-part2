@@ -34,8 +34,8 @@ if(!isset($_COOKIE['login'])){
 <div>
         <h2>登入</h2>
         <form action="checkpart2.php" method="post">
-            <input type="text" name="account" placeholder="使用者名稱">
-            <input type="text" name="password" placeholder="密碼">
+            <input  type="text" name="account" placeholder="使用者名稱">
+            <input  type="text" name="password" placeholder="密碼">
             <input type="submit" value="登入">
         </form>
     </div>
