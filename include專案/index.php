@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>首頁</h1>
-        <?php include("common/bar.php")?>
+        <?php include("common/bar.php");?>
     <main>
         <h2>歡迎光臨</h2>
         <p>這是一個網站的首頁</p>
