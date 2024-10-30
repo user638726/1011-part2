@@ -11,7 +11,7 @@
             width:600px;
             height:600px;
             background: skyblue;
-            
+            text-align:center;
         }
         form{
             text-align:center;
