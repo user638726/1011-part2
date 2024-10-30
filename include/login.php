@@ -27,9 +27,7 @@
             <input type="submit" value="登入">
         </form>
     </main>
-    <footer>
-        <p>版權所有</p>
-    </footer>
+    <?php include("footer.html");?>
 
 </body>
 </html>

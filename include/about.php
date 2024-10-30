@@ -17,8 +17,6 @@
     <h2>我們是一家很棒的公司</h2>
     <p>我們提供最好的服務</p>
 </main>
-<footer>
-    <p>版權所有</p>
-</footer>
+<?php include("footer.html");?>
 </body>
 </html>

@@ -17,8 +17,6 @@
         <h2>我們的產品</h2>
         <p>我們提供最好的產品</p>
     </main>
-    <footer>
-        <p>版權所有</p>
-    </footer>
+    <?php include("footer.html");?>
 </body>
 </html>

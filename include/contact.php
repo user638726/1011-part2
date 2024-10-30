@@ -17,9 +17,7 @@
         <h2>歡迎聯絡我們</h2>
         <p>我們提供最好的服務</p>
     </main>
-    <footer>
-        <p>版權所有</p>
-    </footer>
+    <?php include("footer.html");?>
     
 </body>
 </html>
