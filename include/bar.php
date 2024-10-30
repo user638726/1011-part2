@@ -1,4 +1,5 @@
 <?php
+
 $header=[
     'index'=>'首頁',
     'about'=>'關於我們',
@@ -7,8 +8,15 @@ $header=[
     'login'=>'登入',
     'finacial'=>'財務報表'
 ];
+
+?>
+
 <h1><?=$header[$page];?></h1>
- <?php
+<?php
+foreach($header as $key => $value){
+    echo "<a class='".($page==$key?'now-page':'')."' href='{$key}.php'>{$value}</a>";
+}
+
 /*
     <a class="<?=($page=='index')?'now-page':'';?>" href="index.php">首頁</a>
     <a class="<?=($page=='about')?'now-page':'';?>" href="about.php">關於我們</a>
@@ -16,6 +24,4 @@ $header=[
     <a class="<?=($page=='contact')?'now-page':'';?>" href="contact.php">聯絡我們</a>
     <a class="<?=($page=='login')?'now-page':'';?>" href="login.php">登入</a>
 */
-foreach($header as $key => $value){
-    echo "<a class='".($page==$key?'now-page':'')."' href='{$key}.php'>{$value}</a>";
 ?>
