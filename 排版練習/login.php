@@ -20,15 +20,28 @@
     </style>
 </head>
 <body>
-     <div>
-     <form action="check.php" method="post">
-       <label for="account">account</label><br>
-       <input type="text" id="account" name="account" value="account"><br>
-       <label for="passwrod">passsword</label><br>
-        <input type="text" id="paaword" name="password" value="password"><br>
-        <input type="submit" value="Submit">
-</form>
-     </div> 
+<?php
+session_start();
+if(!isset($_SESSION['login'])){
+?>
+    <div class="login-container">
+        <h2>登入</h2>
+        <form action="check_acc.php" method="post">
+            <input type="text" name="acc" placeholder="使用者名稱" required>
+            <input type="password" name="pw" placeholder="密碼" required>
+            <input type="submit" value="登入">
+        </form>
+    </div>
+
+    <?php
+}else{
+?>
+        <div>
+            你已登入
+        </div>
+<?php
+}
+?>
 </body>
 </html>
 
