@@ -105,7 +105,7 @@ for($i=0;$i<5;$i++){
 </ul>
 <style>
      table{
-        table border-collapse:collapse;
+        border-collapse:collapse;
     }
      td{
         padding:5px 10px;

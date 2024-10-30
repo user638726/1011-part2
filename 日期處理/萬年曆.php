@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>萬年曆</title>
-    <style>
-     table{
-        table border-collapse:collapse;
+</head>
+<body>
+<h1>萬年曆</h1>
+<style>
+    table{
+        border-collapse:collapse;
+
     }
-     td{
+    td{
         padding:5px 10px;
         text-align: center;
         border:1px solid #999;
@@ -26,9 +30,7 @@
         font-weight:bolder;
     }
 </style>
-</head>
-<body>
-<h3><?php echo date("m月");?></h3>
+
 <ul>
     <li>有上一個月下一個月的按鈕</li>
     <li>萬年曆都在同一個頁面同一個檔案</li>
@@ -42,12 +44,41 @@
 </ul>
 <?php
 
+if(isset($_GET['month'])){
+    $month=$_GET['month'];
+}else{
+    $month=date("m");
+}
+if(isset($_GET['year'])){
+    $year=$_GET['year'];
+    
+}else{
+    $year=date("Y");
+}
+
+if($month-1<1){
+    $prevMonth=12;
+    $prevYear=$year-1;
+}else{
+    $prevMonth=$month-1;
+    $prevYear=$year;
+}
+
+if($month+1>12){
+    $nextMonth=1;
+    $nextYear=$year+1;
+}else{
+    $nextMonth=$month+1;
+    $nextYear=$year;
+}
+
 
 ?>
 <a href="">前年</a>
-<a href="">上一個月</a>
-<a href="">下一個月</a>
+<a href="萬年曆.php?year=<?=$prevYear;?>&month=<?=$prevMonth;?>">上一個月</a>
+<a href="萬年曆.php?year=<?=$nextYear;?>&month=<?=$nextMonth;?>">下一個月</a>
 <a href="">明年</a>
+<h3><?php echo date("{$month}月");?></h3>
 <table>
 <tr>
     <td></td>
@@ -60,9 +91,10 @@
     <td>六</td>
 </tr>
 <?php
-$firstDay=date("Y-m-1");
+
+$firstDay="2024-{$month}-1";
 $firstDayTime=strtotime($firstDay);
-$firstDayWeek=date("w",strtotime(date("Y-m-1")));
+$firstDayWeek=date("w",$firstDayTime);
 
 for($i=0;$i<6;$i++){
     echo "<tr>";
@@ -75,7 +107,7 @@ for($i=0;$i<6;$i++){
         $theDayTime=strtotime("$cell days".$firstDay);
 
         //所需樣式css判斷
-        $theMonth=(date("m",$theDayTime)==date("m"))?'':'grey-text';
+        $theMonth=(date("m",$theDayTime)==date("m",$firstDayTime))?'':'grey-text';
         $isToday=(date("Y-m-d",$theDayTime)==date("Y-m-d"))?'today':'';
         $w=date("w",$theDayTime);
         $isHoliday=($w==0 || $w==6)?'holiday':'';
@@ -91,5 +123,6 @@ for($i=0;$i<6;$i++){
 
 
 ?>
+</table>
 </body>
 </html>
