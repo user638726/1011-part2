@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href=./all.css>
 </head>
 <body>
     <h1>首頁</h1>
@@ -16,9 +17,7 @@
         <h2>歡迎光臨</h2>
         <p>這是一個網站的首頁</p>
     </main>
-    <footer>
-        <p>版權所有</p>
-    </footer>
+    <?php include("common/footer.html");?>
 
 
 
