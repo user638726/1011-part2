@@ -17,6 +17,13 @@
             text-align:center;
             padding:100px;
         }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        h2{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -24,11 +31,11 @@
 session_start();
 if(!isset($_SESSION['login'])){
 ?>
-    <div class="login-container">
+    <div>
         <h2>登入</h2>
-        <form action="check_acc.php" method="post">
-            <input type="text" name="acc" placeholder="使用者名稱" required>
-            <input type="password" name="pw" placeholder="密碼" required>
+        <form action="check.php" method="post">
+            <input type="text" name="account" placeholder="使用者名稱">
+            <input type="text" name="password" placeholder="密碼">
             <input type="submit" value="登入">
         </form>
     </div>
