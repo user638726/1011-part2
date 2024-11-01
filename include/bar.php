@@ -17,7 +17,6 @@ $header=[
     <a class="<?=($page=='contact')?'now-page':'';?>" href="contact.php">聯絡我們</a>
     <a class="<?=($page=='login')?'now-page':'';?>" href="login.php">登入</a>
 -->
-    */
 <h1><?=$header[$page];?></h1>
 <?php
 foreach($header as $key => $value){
