@@ -9,7 +9,7 @@
 <?php
 
 $page= "about";
- include("common/navbar.php"); ?>
+ include("bar.php"); ?>
 
 
 <main>
