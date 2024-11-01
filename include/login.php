@@ -9,7 +9,6 @@
 <?php 
    $page= "login";
     include("bar.php"); ?>
-
     <main>
         <h2>請登入</h2>
         <form action="handle_login.php" method="POST">

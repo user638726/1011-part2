@@ -7,7 +7,7 @@
     <link rel="stylesheet" href=./all.css>
 </head>
 <body>
-    <?php
+<?php
         $page= "index";
      include("bar.php"); 
      ?>

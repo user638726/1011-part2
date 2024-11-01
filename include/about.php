@@ -7,9 +7,10 @@
 </head>
 <body>
 <?php
+
 $page= "about";
- include("bar.php");
-  ?>
+ include("bar.php"); ?>
+
 
 <main>
     <h2>我們是一家很棒的公司</h2>
