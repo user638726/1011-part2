@@ -7,8 +7,10 @@
     <link rel="stylesheet" href=./all.css>
 </head>
 <body>
-    <h1>首頁</h1>
-        <?php include("bar.php");?>
+<?php
+        $page= "index";
+     include("bar.php"); 
+     ?>
     <main>
         <h2>歡迎光臨</h2>
         <p>這是一個網站的首頁</p>
