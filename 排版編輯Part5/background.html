@@ -6,12 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /*overflow把多餘空間的圖片(隱藏box的div裡的圖片)*/
+        /* 乙級 丙級 或者特定大小 */
+        /* 網頁失去往下滑的能力 */
+        /* overflow: hidden; */
+        * {
+
+            /*overflow: hidden;*/
+            box-sizing: border-box;
+        }
+
         .box {
-            background-image: url(./blog-cover-0413.jpg);
+            background-image: url(./be0bc20f9fa6e8d7b5526689f606b77a.jpg);
             background-repeat: no-repeat;
-            background-position: top;
-            width: 500px;
-            height: 500px;
+            width: 170px;
+            height: 250px;
+        }
+
+        .box1 {
+            overflow: hidden;
+            width: 170px;
+            height: 250px;
+        }
+
+        .position {
+            background-position: left top;
+        }
+
+        .position1 {
+            background-position: left bottom;
+        }
+
+        .position2 {
+            background-position: right bottom;
+        }
+
+        .position3 {
+            background-position: right top;
         }
     </style>
 </head>
@@ -19,17 +50,31 @@
 <body>
     <!---無box圖片-->
     <h1>普通img插入</h1>
-    <img src="./blog-cover-0413.jpg">
+    <img src="./be0bc20f9fa6e8d7b5526689f606b77a.jpg">
 
     <!---box內圖片-->
-    <h1>box內插入圖片</h1>
-    <div class="box">
+    <h1>box內插入圖片 left top</h1>
+    <div class="box position">
 
     </div>
 
+    <h1>box內插入圖片 left bottom</h1>
+    <div class="box position1">
+    </div>
+
+    <h1>box內插入圖片 right bottom</h1>
+    <div class="box position2">
+    </div>
 
 
+    <h1>box內插入圖片 right top</h1>
+    <div class="box position3">
+    </div>
 
+    <h1>box的div裡的圖片</h1>
+    <div class="box1">
+        <img src="./be0bc20f9fa6e8d7b5526689f606b77a.jpg" alt="">
+    </div>
 </body>
 
 </html>
