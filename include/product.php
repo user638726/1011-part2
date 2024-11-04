@@ -10,7 +10,6 @@
     $page= "product";
     include("bar.php"); ?>
 
-
     <main>
         <h2>我們的產品</h2>
         <p>我們提供最好的產品</p>
