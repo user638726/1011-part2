@@ -26,14 +26,16 @@
 
     $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
-    foreach($rows as $row)
-     {
-        echo "<table>".
-        "<td>".$row['id']."<td>".
-        "<td>".$row['name']."<td>".
-        "<td>".$row['tutor']."<td>".
-        "</table>";
-    }
+    echo "<table>";  // Open the table tag once before starting the loop
+foreach($rows as $row) {
+    echo "<tr>";  // Open a new table row for each item
+    echo "<td>" . $row['id'] . "</td>";   // Correctly close <td> tags
+    echo "<td>" . $row['name'] . "</td>";
+    echo "<td>" . $row['tutor'] . "</td>";
+    echo "</tr>";  // Close the table row
+}
+echo "</table>";  // Close the table tag after the loop
+
 
     echo"<pre>";
     print_r($rows);
