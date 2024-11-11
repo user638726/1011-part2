@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer-container {
+            display: flex;
+            /* 父容器使用 flex 來排列兩個內部 container */
+            flex-direction: column;
+            /* 讓容器垂直排列 */
+            justify-content: center;
+            align-items: center;
+            width: 1000px;
+            margin: 0 auto;
+            background-color: lightblue;
+            height: 1024px;
+        }
+
+        .container {
+            display: flex;
+            /* 內部 container 仍然是水平排列 */
+            justify-content: center;
+            margin: 20px 0;
+            width: 100%;
+            flex-wrap: wrap;
+            /* 讓子元素可以換行 */
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            text-align: center;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 24px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <p>flex 練習</p>
+    <div class="outer-container">
+        <!-- 第一組容器 -->
+        <div class="container">
+            <div class="box1">1</div>
+            <div class="box1">2</div>
+            <div class="box1">3</div>
+        </div>
+
+        <!-- 第二組容器 -->
+        <div class="container">
+            <div class="box1">4</div>
+            <div class="box1">5</div>
+            <div class="box1">6</div>
+        </div>
+    </div>
+</body>
+
+</html>
