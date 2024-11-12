@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         .outer-container {
             display: flex;
             /* 父容器使用 flex 來排列兩個內部 container */
@@ -23,7 +27,7 @@
             display: flex;
             /* 內部 container 仍然是水平排列 */
             justify-content: center;
-            margin: 20px 0;
+            margin: auto;
             width: 100%;
             flex-wrap: wrap;
             /* 讓子元素可以換行 */
@@ -38,9 +42,24 @@
             border-radius: 8px;
         }
 
-        p {
+        h1 {
             text-align: center;
             font-size: 24px;
+            color: black;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 50px;
+
+        }
+
+        button {
+            border-radius: 8px;
+            color: blue;
+        }
+
+        a:hover {
             color: black;
         }
 
@@ -48,20 +67,38 @@
             .box1 {
                 width: 50%;
             }
+
+            a {
+                width: 50%;
+
+            }
         }
 
         @media(max-width:768px) {
             .box1 {
                 width: 75%;
+
+            }
+
+            a {
+                width: 75%;
+
             }
         }
     </style>
 </head>
 
 <body>
-
+    <h1>天氣預報</h1>
     <div class="outer-container">
-        <p>flex 練習</p>
+
+        <div class="container">
+            <button><a href="One">北部</a></button>
+            <button><a href="Two">中部</a></button>
+            <button><a href="Three">南部</a></button>
+            <button><a href="four">東部</a></button>
+            <button><a href="five">離島</a></button>
+        </div>
         <!-- 第一組容器 -->
         <div class="container">
             <div class="box1">1</div>
