@@ -36,8 +36,8 @@ foreach($rows as  $row){
         <td><?=$row['email'];?></td>
         <td><?=$row['tel'];?></td>
         <td>
-            <a href="login2.php">編輯</a>
-            <a href="del.php?id=<?=$row['id'];?>">刪除</a>
+            <a href="edit_form.php?id=<?=$row['id'];?>">編輯</a>
+            <a href="delete.php?id=<?=$row['id'];?>">刪除</a>
         </td>
     </tr>
     <?php

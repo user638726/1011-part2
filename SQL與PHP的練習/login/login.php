@@ -10,13 +10,12 @@
             background-color: #f2f2f2;
             display: flex;
             justify-content: center;
-            align-items: start;
+            align-items: center;
             height: 100vh;
             margin: 0;
         }
         .login-container {
             background-color: white;
-            margin-top: 100px;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -53,16 +52,11 @@
 <body>
 <?php
 
-if(isset($_GET['err'])){
-    echo "<h3 style='color:red;text-align:center'>帳號或密碼錯誤</h3>";
-}
-
-
 if(!isset($_COOKIE['login'])){
 ?>
     <div class="login-container">
         <h2>登入</h2>
-        <form action="check_acc2.php" method="post">
+        <form action="check_acc.php" method="post">
             <input type="text" name="acc" placeholder="使用者名稱" required>
             <input type="password" name="pw" placeholder="密碼" required>
             <input type="submit" value="登入">
