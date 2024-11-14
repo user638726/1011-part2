@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--google字型-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            font-size: 16px;
+        }
+
+
+        body {
+            /*對整份文件做設定*/
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /*對部分文字做設定*/
+        .font-style {
+            /*單位可以是px 、rem、em*/
+            font-size: 30px;
+            /*設定斜體*/
+            font-style: italic;
+            /*設定粗體*/
+            font-weight: bolder;
+            /*字型家族*/
+            /*如果使用者的系統有一個字型就使用，微軟正黑體，沒有就用第二個verdana */
+            font-family: '微軟正黑體', Verdana, Geneva, Tahoma, sans-serif
+        }
+
+        .google-font {
+            font-family: "Teko", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 30px;
+        }
+
+        .text-style {
+            font-size: 30px;
+            /*-文字對齊-*/
+            text-align: center;
+            /*underline、overlibe、line-through*/
+            text-decoration: underline;
+            /*第一行文字的縮排*/
+            text-indent: 100px;
+            /*英文字母或中文字的間隔*/
+            letter-spacing: 10px;
+            /* 單字之間的間隔，中文字比較難用到這個屬性(字與字沒有空格)*/
+            word-spacing: 50px;
+            /* 行高，可以設定單位值*/
+            line-height: 50px;
+            /*也可以設定倍數(無單位)*/
+            line-height: 2
+        }
+
+        .text-shadow {
+            font-size: 100px;
+            /*水平位移(+為右，-為左)、垂直位移(+為下，-為上)、模糊半徑、顏色*/
+            /*多重陰影，組跟組之間用逗點隔開*/
+            text-shadow:
+                10px 20px 5px rgba(0, 0, 0, 0.5),
+                50px -20px 10px rgba(234, 444, 30, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!---
+    10進位 0~9
+    32=>10進位 0~9
+  32 => 2*1(個位數) + 10*3(十位數) = 32
+
+  16進位 0~9 A(10)、B(11)、C(12)、D(13)、E(14)、F(15)
+  1A => 10*1(個位數) + 16*1 = 26
+  FF => 255 => 15*1 + 15*16 = 255
+  -->
+
+    <h1 class="google-font">
+        1.font樣式設定
+    </h1>
+    <div class="font-style google-font ">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quas dicta ullam mollitia
+    </div>
+    <h1 class="google-font">2.google font</h1>
+    <p class="google-font">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, suscipit.</p>
+    <h2 class="text-style">3.text樣式設定
+        <p class="text-style">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, ipsa?</p>
+    </h2>
+
+    <h2>4.文字陰影</h2>
+    <p class="text-shadow">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas eius atque perferendis dolorem
+        vel reiciendis quia soluta illum, non dolorum.</p>
+
+
+    <h2>5.rem與em差異</h2>
+    <h3>rem</h3>
+    <p>為root預設 font-size的倍數，預設為16px</p>
+    <p>:root 選擇器，指的是根元素html</p>
+    <div style="font-size:1rem;">
+        font
+        <div style="font-size:2rem;">
+            font
+            <div style="font-size:3rem;">font</div>
+        </div>
+    </div>
+
+
+    <h3>em</h3>
+    <p>可能為父層或祖先層 font-size的倍數</p>
+    <p>父層若有設定文字尺寸以它為準，沒有會繼續往外找</p>
+    <div style="font-size:1em;">
+        font
+        <div style="font-size:2em;">
+            font
+            <div style="font-size:3em;">font</div>
+        </div>
+    </div>
+</body>
+
+</html>
