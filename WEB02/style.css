@@ -33,11 +33,31 @@ h1 {
 }
 
 .link {
-
-    position: relative;
     display: inline-block;
+    width: 200px;
+    height: 35px;
+    background-image: url('./images/menu1.png');
+    background-size: cover; /* 确保背景图覆盖整个元素 */
+    position: relative;
+    transition: background-image 0.3s ease; /* 平滑过渡效果 */
 }
 
+/* 鼠标悬停时更改背景图 */
+.link:hover {
+    background-image: url('./images/menu2.png'); /* 替换为新的背景图 */
+}
+.link3{
+    display: inline-block;
+    width: 200px;
+    height: 35px;
+    background-image: url('./images/menu1.png');
+    background-size: cover; /* 确保背景图覆盖整个元素 */
+    position: relative;
+    transition: background-image 0.3s ease; /* 平滑过渡效果 */
+}
+.link3:hover {
+    background-image: url('./images/menu2.png'); /* 替换为新的背景图 */
+}
 .overlay-text1 {
     position: absolute;
     top: 50%;
@@ -51,10 +71,6 @@ h1 {
     font-weight: 500;
     color: #000000;
 
-}
-
-a:hover {
-    background-image: url(./images/menu2.png);
 }
 
 .overlay-text {
