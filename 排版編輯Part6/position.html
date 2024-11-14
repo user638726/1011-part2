@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            opacity: 0;
+        }
+
+        .right {
+            width: 100%;
+            height: 80vh;
+            background-color: lightblue;
+            position: relative;
+            right: 20px;
+            /* 向左移動 20px */
+        }
+
+        .box {
+            position: fixed;
+            bottom: 30px;
+            /*由下往上*/
+            right: 50px;
+            /*由右至左`*/
+            width: 300px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, ex?</span><img
+        src="https://picsum.photos/id/20/400/300">
+    <br>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img
+        src="https://picsum.photos/id/20/400/300">
+    <div class="right">
+        <img src="https://picsum.photos/id/21/400/300">
+    </div>
+    <div class="box">
+        <img src="https://picsum.photos/id/30/400/300">
+    </div>
+</body>
+
+</html>
