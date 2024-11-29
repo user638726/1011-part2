@@ -80,7 +80,7 @@ $daysInMonth = date('t', $firstDayOfMonth);
             color:yellow;
         }
         body {
-            background-image: url(./People\ In\ This\ Online\ Group\ Are\ Sharing\ Photos\ Of\ The\ Most\ Beautiful\ Places\ They’ve\ Discovered.jpg);
+            background-image: url(./picture.jpg);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
