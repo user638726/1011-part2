@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="outer-container">
+        <!-- 第一組容器 -->
+        <div class="container">
+            <div class="box" id="box1">
+                <img src="https://www.gqfood.com.tw/archive/image/product1/images/38super_05.jpg" width="150px"
+                    height="150px">
+                <p>薯條 150元</p>
+            </div>
+            <div class="box" id="box2">
+                <img src="https://s7d1.scene7.com/is/image/mcdonalds/hamburger_832x822:1-3-product-tile-desktop?wid=829&hei=515&dpr=off"
+                    width="150px" height="150px">
+                <p>漢堡 200元</p>
+            </div>
+            <div class="box" id="box3">
+                <img src="https://www.coca-cola.com/content/dam/onexp/tw/zh/home-images/brands/coca-cola/twtc_coca-cola_prod_coke%20classic%20600ml_750x750.png"
+                    width="150px" height="150px">
+                <p>可樂 100元</p>
+            </div>
+        </div>
+
+        <!-- 第二組容器 -->
+        <div id="totalPrice" style="margin-top: 20px; font-size: 20px;">
+            總價: 450元
+        </div>
+    </div>
+
+    <script>
+        // 設置每個商品的原始價格
+        const originalPrices = {
+            box1: 150,
+            box2: 200,
+            box3: 100
+        };
+
+        // 設置修改後的價格
+        const updatedPrices = {
+            box1: 180,
+            box2: 220,
+            box3: 120
+        };
+
+        // 初始化總價
+        let total = originalPrices.box1 + originalPrices.box2 + originalPrices.box3;
+
+        // 顯示初始總價
+        const totalPriceElement = document.getElementById('totalPrice');
+        totalPriceElement.textContent = '總價: ' + total + '元';
+
+        // 更新總價顯示
+        function updateTotal() {
+            totalPriceElement.textContent = '總價: ' + total + '元';
+        }
+
+        // 處理點擊事件函數
+        function handleClick(boxId) {
+            const box = document.getElementById(boxId);
+            const pElement = box.querySelector('p');
+            if (boxId === 'box1') {
+                pElement.textContent = '薯條 ' + updatedPrices.box1 + '元';
+                total = total - originalPrices.box1 + updatedPrices.box1;
+            } else if (boxId === 'box2') {
+                pElement.textContent = '漢堡 ' + updatedPrices.box2 + '元';
+                total = total - originalPrices.box2 + updatedPrices.box2;
+            } else if (boxId === 'box3') {
+                pElement.textContent = '可樂 ' + updatedPrices.box3 + '元';
+                total = total - originalPrices.box3 + updatedPrices.box3;
+            }
+            updateTotal();
+        }
+
+        // 處理雙擊事件函數
+        function handleDoubleClick(boxId) {
+            const box = document.getElementById(boxId);
+            const pElement = box.querySelector('p');
+            if (boxId === 'box1') {
+                pElement.textContent = '薯條 ' + originalPrices.box1 + '元';
+                total = total - updatedPrices.box1 + originalPrices.box1;
+            } else if (boxId === 'box2') {
+                pElement.textContent = '漢堡 ' + originalPrices.box2 + '元';
+                total = total - updatedPrices.box2 + originalPrices.box2;
+            } else if (boxId === 'box3') {
+                pElement.textContent = '可樂 ' + originalPrices.box3 + '元';
+                total = total - updatedPrices.box3 + originalPrices.box3;
+            }
+            updateTotal();
+        }
+
+        // 綁定事件
+        document.getElementById('box1').addEventListener('click', () => handleClick('box1'));
+        document.getElementById('box1').addEventListener('dblclick', () => handleDoubleClick('box1'));
+
+        document.getElementById('box2').addEventListener('click', () => handleClick('box2'));
+        document.getElementById('box2').addEventListener('dblclick', () => handleDoubleClick('box2'));
+
+        document.getElementById('box3').addEventListener('click', () => handleClick('box3'));
+        document.getElementById('box3').addEventListener('dblclick', () => handleDoubleClick('box3'));
+    </script>
+</body>
+
+</html>

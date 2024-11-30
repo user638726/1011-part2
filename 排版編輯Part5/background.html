@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -150,4 +151,158 @@
     </table>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*overflow把多餘空間的圖片(隱藏box的div裡的圖片)*/
+        /* 乙級 丙級 或者特定大小 */
+        /* 網頁失去往下滑的能力 */
+        /* overflow: hidden; */
+        * {
+
+            /*overflow: hidden;*/
+            box-sizing: border-box;
+        }
+
+        .box {
+            background-image: url(./onepiece.jpg);
+            background-repeat: no-repeat;
+            width: 170px;
+            height: 250px;
+            background-position: center;
+        }
+
+        .box1 {
+            overflow: hidden;
+            width: 170px;
+            height: 250px;
+        }
+
+        .position {
+            background-position: left top;
+        }
+
+        .position1 {
+            background-position: left bottom;
+        }
+
+        .position2 {
+            background-position: right bottom;
+        }
+
+        .position3 {
+            background-position: right top;
+        }
+
+        .position4 {
+            background-position: center top;
+        }
+
+        .position5 {
+            background-position: center bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <!---無box圖片-->
+    <h1>普通img插入</h1>
+    <img src="./onepiece.jpg">
+
+    <!---box內圖片-->
+    <h1>box內插入圖片 left top</h1>
+    <div class="box position">
+
+    </div>
+
+    <h1>box內插入圖片 left bottom</h1>
+    <div class="box position1">
+    </div>
+
+    <h1>box內插入圖片 right bottom</h1>
+    <div class="box position2">
+    </div>
+
+
+    <h1>box內插入圖片 right top</h1>
+    <div class="box position3">
+    </div>
+
+    <h1>box內插入圖片 center top</h1>
+    <div class="box position4">
+    </div>
+
+    <h1>box內插入圖片 center bottom</h1>
+    <div class="box position5">
+    </div>
+
+    <h1>box的div裡的圖片</h1>
+    <div class="box1">
+        <img src="./onepiece.jpg" alt="">
+    </div>
+
+    <!-- box bg-img table -->
+    <h1>九宮格圖片</h1>
+    <table>
+        <tr>
+            <td>
+                <div class="box position ">
+
+                </div>
+            </td>
+            <td>
+                <div class="box position1">
+
+                </div>
+            </td>
+            <td>
+                <div class="box  position2">
+
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="box position5">
+
+                </div>
+            </td>
+            <td>
+                <div class="box position3">
+
+                </div>
+            </td>
+            <td>
+                <div class="box  position4">
+
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="box position2">
+
+                </div>
+            </td>
+            <td>
+                <div class="box position5">
+
+                </div>
+            </td>
+            <td>
+                <div class="box  position3">
+
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+>>>>>>> 4a934a5dc1e68a9427d400dc0cc4ad9eb6aebac5
 </html>

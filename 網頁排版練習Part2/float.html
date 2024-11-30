@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,4 +51,58 @@
     <p>容器外的文字</p>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box
+        }
+
+        .left {
+            /*
+            float可以將元素變成區塊元素
+            會把元素變成display block
+            */
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!--float的元素不會被計入高度-->
+    <div>
+        <div class="box left"></div>
+        <span class="left">接到實力 ，交通簡介</span>
+        <div class="box left"></div>
+        <div class="box right"></div>
+        <p>容器內的文字，float內的文字</p>
+        <!--預設其他東西為漂浮的元素，可以使用clear 清除浮動，排在漂浮的元素下一行(要用block)-->
+        <p style="clear:both">容器內的文字，float內的文字</p>
+    </div>
+    <p>容器外的文字</p>
+    <hr>
+    <!---在漂浮的外層容器加上overflow:hidden;可以讓漂浮元素被算入高度-->
+    <!--div.box.left*3-->
+    <div style="overflow: hidden;">
+        <div class="box left"></div>
+        <div class="box left"></div>
+        <div class="box left"></div>
+    </div>
+    <p>容器外的文字</p>
+</body>
+
+>>>>>>> 4a934a5dc1e68a9427d400dc0cc4ad9eb6aebac5
 </html>

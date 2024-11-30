@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*外部樣式表*/
 p {
     color: purple;
@@ -5,4 +6,13 @@ p {
 
 h1 {
     font-size: 100px;
+=======
+/*外部樣式表*/
+p {
+    color: purple;
+}
+
+h1 {
+    font-size: 100px;
+>>>>>>> 4a934a5dc1e68a9427d400dc0cc4ad9eb6aebac5
 }
