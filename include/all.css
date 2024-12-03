@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1 {
     color: blue;
     background-color: yellow;
@@ -8,4 +9,16 @@ h1 {
     border: 1px solid #ccc;
     background-color: aqua;
     color: #333;
+=======
+h1 {
+    color: blue;
+    background-color: yellow;
+}
+
+.now-page {
+    padding: 3px 8px;
+    border: 1px solid #ccc;
+    background-color: aqua;
+    color: #333;
+>>>>>>> 4a934a5dc1e68a9427d400dc0cc4ad9eb6aebac5
 }

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 {
     "php.validate executeablePath": "C:\\xamp\\php\\php.exe"
+=======
+{
+    "php.validate executeablePath": "C:\\xamp\\php\\php.exe"
+>>>>>>> 4a934a5dc1e68a9427d400dc0cc4ad9eb6aebac5
 }

@@ -14,7 +14,7 @@
       echo "</pre>";
       for($i=0;$i<floor(count($a)/2); $i++){
             $tmp=$a[$i];
-            $a[i]=$a[count(a)-1-$i];
+            $a[$i]=$a[count($a)-1-$i];
             $a[count($a)-1-$i]=$tmp;
 
       }
@@ -25,7 +25,7 @@
       echo "<hr>";
       echo "<pre>";
       print_r(array_reverse($a));
-      echo "</pre>"
+      echo "</pre>";
 
 
 
