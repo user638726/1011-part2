@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .outer-container {
+            display: flex;
+            /* 父容器使用 flex 來排列兩個內部 container */
+            flex-direction: column;
+            /* 讓容器垂直排列 */
+            justify-content: center;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: lightblue;
+            max-height: 2200px;
+        }
+
+        .container {
+            display: flex;
+            /* 內部 container 仍然是水平排列 */
+            justify-content: center;
+            margin: auto;
+            width: 100%;
+            flex-wrap: wrap;
+            /* 讓子元素可以換行 */
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            text-align: center;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+
+
+        #color {
+            color: yellow
+        }
+
+        .sum {
+            color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form class=outer-container>
+        <div class="container">
+            <label for="fname" id="color" class="box1">數量1<input type="number" id="num1" name="fname"><label for="lname"
+                    id="color" class="box1">數量2<input type="number" id="num2" name="lname"><input type="button"
+                        value="Click me" id="button"></label></label>
+
+
+            <div id="box1Span" class="box1">sum=</div>
+            <div id="box1Span2" class="box1">sumx10=</div>
+        </div>
+    </form>
+    <script>
+        $(document).ready(function () {
+            // 1. bind
+            const num1 = $('#num1');
+            const num2 = $('#num2');
+            const myBtn = $('#button');
+            const box1Span = $('#box1Span');
+            const box1Span2 = $('#box1Span2');
+
+            // 2.action
+            myBtn.click(function (e) {
+                console.log('myBtn ok');
+
+                // 1.get num1
+                // 2.get num2
+                // 3.sum = num1 + num2
+
+                // 1.get num1
+                let num1Value = Number(num1.val());
+                console.log('num1Value', num1Value);
+                console.log('num1Value typeof', typeof (num1Value));
+
+                // 2.get num2
+                let num2Value = Number(num2.val());
+                console.log('num2Value', num2Value);
+                console.log('num2Value typeof', typeof (num2Value));
+
+                // 3.sum = num1 + num2
+                let sum = num1Value + num2Value;
+                console.log('sum', sum);
+
+                // 4.show result box1Span
+                box1Span.text(`${num1Value} + ${num2Value} = ${sum}`);
+
+                let x10Result = sum * 10;
+                box1Span2.text(`${sum} x 10 = ${x10Result}`);
+
+
+            });
+
+
+        });
+    </script>
+
+</body>
+
+</html>
