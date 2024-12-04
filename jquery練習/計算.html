@@ -47,11 +47,11 @@
 
 
         #color {
-            color: yellow
+            color: green
         }
 
         .sum {
-            color: yellow;
+            color: green;
         }
     </style>
 
@@ -61,8 +61,8 @@
     <form class=outer-container>
         <div class="container">
             <label for="fname" id="color" class="box1">數量1<input type="number" id="num1" name="fname"><label for="lname"
-                    id="color" class="box1">數量2<input type="number" id="num2" name="lname"><input type="button"
-                        value="Click me" id="button"></label></label>
+                    id="color" class="box1">數量2<input type="number" id="num2" name="lname"><br>加減乘除<input type="text"
+                        name="" id="opt"><br><br><input type="button" value="Click me" id="button"></label></label>
 
 
             <div id="box1Span" class="box1">sum=</div>
@@ -71,37 +71,29 @@
     </form>
     <script>
         $(document).ready(function () {
-
-            /*
-            * sumFun 加總
-            * num1 number 第一個數字
-            * num2 number 第二個數字
-            * return sum 加總
-            */
+            // 1. bind
+            const num1 = $('#num1');
+            const num2 = $('#num2');
+            const myBtn = $('#button');
+            const opt = $('#opt');
+            const box1Span = $('#box1Span');
+            const box1Span2 = $('#box1Span2');
             function sumFun(num1, num2) {
                 let sum = num1 + num2;
                 console.log('sum', sum);
-                return sum;
+                return sum
             }
+
 
             function x10Fun(sum) {
                 return sum * 10;
             }
 
-            function showResult(num1Value, num2Value, sum, x10Result) {
-                box1Span.text(`${num1Value} + ${num2Value} = ${sum}`);
-                box2Span.text(`${num1Value} + ${num2Value} = ${sum}`);
-                box3Span.text(`${sum} x 10 = ${x10Result}`);
+            function showResult(num1Value, num2Value, optValue, sum, x10Result) {
+                box1Span.text(`${num1Value} ${optValue} ${num2Value} = ${sum}`);
+                box1Span2.text((`${sum} x 10 = ${x10Result}`));
+
             }
-
-            // 1. bind
-            const num1 = $('#num1');
-            const num2 = $('#num2');
-            const myBtn = $('#myBtn');
-            const box1Span = $('#box1Span');
-            const box2Span = $('#box2Span');
-            const box3Span = $('#box3Span');
-
             // 2.action
             myBtn.click(function (e) {
                 console.log('myBtn ok');
@@ -109,6 +101,7 @@
                 // 1.get num1
                 // 2.get num2
                 // 3.sum = num1 + num2
+                // 4.sum =num1 opt num2
 
                 // 1.get num1
                 let num1Value = Number(num1.val());
@@ -120,17 +113,42 @@
                 console.log('num2Value', num2Value);
                 console.log('num2Value typeof', typeof (num2Value));
 
-                // 3.sumFun()
-                let sum = sumFun(num1Value, num2Value);
 
-                // 4.x10Fun()
-                let x10Result = x10Fun(sum);
-
-                // 5.show result
-                showResult(num1Value, num2Value, sum, x10Result);
+                let optValue = opt.val();
+                console.log('optValue', optValue);
+                console.log('optValue typeof', typeof (optValue));
 
 
+                let calResult = 0;
+                switch (optValue) {
+                    case '+':
+                        calResult = num1Value + num2Value;
+                        break;
 
+                    case '-':
+                        calResult = num1Value - num2Value;
+                        break;
+
+                    case '*':
+                        calResult = num1Value * num2Value;
+                        break;
+
+                    case '/':
+                        calResult = num1Value / num2Value;
+                        break;
+
+                    default:
+                        break;
+                }
+
+
+                // 3.sum = num1 + num2
+                //let sum = sumFun(num1Value, num2Value);
+
+                // 4.show result box1Span
+                let x10Result = x10Fun(calResult);
+
+                showResult(num1Value, num2Value, optValue, calResult, x10Result);
 
 
 
