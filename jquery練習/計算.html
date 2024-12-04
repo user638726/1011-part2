@@ -71,12 +71,36 @@
     </form>
     <script>
         $(document).ready(function () {
+
+            /*
+            * sumFun 加總
+            * num1 number 第一個數字
+            * num2 number 第二個數字
+            * return sum 加總
+            */
+            function sumFun(num1, num2) {
+                let sum = num1 + num2;
+                console.log('sum', sum);
+                return sum;
+            }
+
+            function x10Fun(sum) {
+                return sum * 10;
+            }
+
+            function showResult(num1Value, num2Value, sum, x10Result) {
+                box1Span.text(`${num1Value} + ${num2Value} = ${sum}`);
+                box2Span.text(`${num1Value} + ${num2Value} = ${sum}`);
+                box3Span.text(`${sum} x 10 = ${x10Result}`);
+            }
+
             // 1. bind
             const num1 = $('#num1');
             const num2 = $('#num2');
-            const myBtn = $('#button');
+            const myBtn = $('#myBtn');
             const box1Span = $('#box1Span');
-            const box1Span2 = $('#box1Span2');
+            const box2Span = $('#box2Span');
+            const box3Span = $('#box3Span');
 
             // 2.action
             myBtn.click(function (e) {
@@ -96,15 +120,18 @@
                 console.log('num2Value', num2Value);
                 console.log('num2Value typeof', typeof (num2Value));
 
-                // 3.sum = num1 + num2
-                let sum = num1Value + num2Value;
-                console.log('sum', sum);
+                // 3.sumFun()
+                let sum = sumFun(num1Value, num2Value);
 
-                // 4.show result box1Span
-                box1Span.text(`${num1Value} + ${num2Value} = ${sum}`);
+                // 4.x10Fun()
+                let x10Result = x10Fun(sum);
 
-                let x10Result = sum * 10;
-                box1Span2.text(`${sum} x 10 = ${x10Result}`);
+                // 5.show result
+                showResult(num1Value, num2Value, sum, x10Result);
+
+
+
+
 
 
             });
