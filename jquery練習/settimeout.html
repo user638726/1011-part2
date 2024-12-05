@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .outer-container {
+            display: flex;
+            /* 父容器使用 flex 來排列兩個內部 container */
+            flex-direction: column;
+            /* 讓容器垂直排列 */
+            justify-content: center;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: lightblue;
+            max-height: 2200px;
+        }
+
+        input {
+            width: 200px;
+            height: 100px;
+        }
+
+        .container {
+            display: flex;
+            /* 內部 container 仍然是水平排列 */
+            flex-direction: column;
+            justify-self: center;
+            align-items: center;
+            margin: auto;
+            width: 100%;
+            flex-wrap: wrap;
+            /* 讓子元素可以換行 */
+        }
+    </style>
+</head>
+
+<body>
+    <form class=outer-container>
+        <div class="container">
+            <input type="text" id="num1" name="fname">
+            <input type="text" id="num2" name="lname">
+            <input type="button" value="Click me" id="button"></label></label>
+        </div>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            const button = $('#button');
+            const num1 = $('#num1');
+            const num2 = $('#num2');
+            let myInterval;
+            let count = 0;
+
+            // for 1 -> 10  sec:1
+            let timer = setInterval(function () {
+                count++;
+                console.log(count);
+                if (count >= 10) {
+                    clearInterval(timer);
+                }
+            }, 1000)
+
+
+            button.click(function () {
+
+                clearInterval(myInterval);
+                console.log('myBtn ok ');
+                let getTextValue = num1.val();
+                let getTimeValue = Number(num2.val()) * 1000;
+                console.log('getTextValue', getTextValue);
+                console.log('getTextValue typeof', typeof (getTextValue));
+                console.log('getTimeValue', getTimeValue);
+                console.log('getTimeValue typeof', typeof (getTimeValue));
+
+                // 2.get num2
+                myInterval = setInterval(function () {
+                    console.log(`my text is ${getTextValue}`);
+                    num1.text(getTextValue);
+                    num2.text(getTextValue);
+
+
+
+                    myInterval = setInterval(function () {
+                        count++;
+                        console.log(`my text is ${getTextValue} - ${count}`);
+                        num1.text(getTextValue);
+                        num2.text(`${getTextValue} - ${count}`);
+                        //setTimeout(function () {
+                        //  num1.text('');
+                        // num2.text('');
+                        //, 100);
+                    }, getTimeValue);
+
+
+
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -148,9 +148,11 @@
                 // 4.show result box1Span
                 let x10Result = x10Fun(calResult);
 
-                showResult(num1Value, num2Value, optValue, calResult, x10Result);
+                //showResult(num1Value, num2Value, optValue, calResult, x10Result);
 
-
+                setTimeout(function () {
+                    showResult(num1Value, num2Value, optValue, calResult, x10Result);
+                }, 3000)
 
             });
 
