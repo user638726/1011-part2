@@ -9,7 +9,7 @@
 
 <body>
     <h1 id="myH1">計算機</h1>
-    <form action="./sum.php" method="get" id="myForm">
+    <form action="./sumPart2.php" method="get" id="myForm">
         <p>
             <input type="number" name="num1" id="num1">
         </p>
@@ -17,12 +17,13 @@
             <input type="number" name="num2" id="num2">
         </p>
         <p>
+            <input type="text" name="opt" id="opt">
+        </p>
+        <p>
             <!-- <input type="hidden" name="tmp" id="tmp"> -->
             <input type="submit" value="submit">
         </p>
     </form>
-
-
 
 
     <!-- ajax ? -->
@@ -54,7 +55,7 @@
                 let data = myForm.serializeArray();
                 // data.push({ name: 'num3', value: 55688 });
 
-                //console.log('data', data);
+                // console.log('data', data);
 
 
                 //do ....
@@ -63,7 +64,7 @@
 
                 $.ajax({
                     type: "get",
-                    url: "./sum.php",
+                    url: "./sumPart2.php",
                     data: data,
                     dataType: "json",
                     success: function (res) {
