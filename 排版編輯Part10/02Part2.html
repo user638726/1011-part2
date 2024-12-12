@@ -22,7 +22,7 @@
                 <p class="priceClass" id="price1" data-price="50">
                     50元
                 </p>
-                <input class="inputClass" type="number" name id="input1" value="0">
+                <input class="inputClass" type="number" id="input1" min="0">
                 <p class="toltalClass" id="total1">0</p>
             </div>
             <div class="box" id="box2">
@@ -32,7 +32,7 @@
                 <p class="priceClass" id="price2" data-price="35">
                     35元
                 </p>
-                <input class="inputClass" type="number" name id="input2" value="0">
+                <input class="inputClass" type="number" id="input2" min="0">
                 <p class="toltalClass" id="total2">0</p>
             </div>
             <div class="box" id="box3">
@@ -42,7 +42,7 @@
                 <p class="priceClass" id="price3" data-price="60">
                     60元
                 </p>
-                <input class="inputClass" type="number" name id="input3" value="0">
+                <input class="inputClass" type="number" id="input3" min="0">
                 <p class="toltalClass" id="total3">0</p>
             </div>
         </div>
@@ -57,92 +57,37 @@
     <script>
 
         $(document).ready(function () {
-            // function
-            // get all Result => sum
+            // function to calculate total sum
             function getSum() {
                 let sum = 0;
-                totalClass.each(function (index, element) {
-                    console.log('index', index);
-                    console.log('element', element);
-                    console.log('this', this);
-
+                $('.toltalClass').each(function () {
                     let getTotalValue = Number($(this).text());
-                    sum = sum + getTotalValue;
-
+                    sum += getTotalValue;
                 });
 
-                // >300: 打85折 ; Other: 原價!
-                // if (sum >= 300) {
-                //     sumResult = sum * 0.8;
-                //     let resultString = `${sum} 元`;
-                //     sumResult.text(resultString);
-                // } else {
-                //     let resultString = `${sum} 元`;
-                //     sumResult.text(resultString);
-                // }
-
-                // 重構
+                // Apply discount if sum is greater than or equal to 300
                 if (sum >= 300) {
-                    sum = sum * 0.85;
-                    sumResult.attr('class', 'text-red');
+                    sum = sum * 0.85; // 15% discount
+                    $('#sumResult').addClass('text-red');
                 } else {
-                    sumResult.attr('class', '');
-                    // sumResult.removeClass('text-red');
+                    $('#sumResult').removeClass('text-red');
                 }
-                let resultString = `${sum} 元`;
-                sumResult.text(resultString);
+
+                $('#sumResult').text(`${sum} 元`);
             }
 
-            // 1.bind
-            const price1 = $('#price1');
-            const input1 = $('#input1');
-            const total1 = $('#total1');
+            // Bind change event to input elements
+            $('.inputClass').on('change', function () {
+                let $parent = $(this).closest('.box'); // Find the parent .box
+                let price = Number($parent.find('.priceClass').attr('data-price')); // Get the price
+                let quantity = Number($(this).val()); // Get the input value
+                let total = price * quantity; // Calculate total
 
-            const priceClass = $('.priceClass');
-            const inputClass = $('.inputClass');
-            const totalClass = $('.totalClass');
+                $parent.find('.toltalClass').text(total); // Update total for this item
 
-            console.log('priceClass', priceClass);
-            console.log('inputClass', inputClass);
-            console.log('totalClass', totalClass);
-
-            const sumResult = $('#sumResult');
-            let sum = 0;
-
-
-            // 2.action
-            $.each(inputClass, function (indexInArray, valueOfElement) {
-                $(this).change(function (e) {
-                    console.log('chaneg ok');
-
-                    // now ?
-                    console.log('now $(this)', $(this));
-
-                    // parent() tr
-                    myParent = $(this).parent().parent();
-                    console.log('myParent', myParent);
-
-                    // find() .class
-                    myPrice = myParent.find('.priceClass').attr('data-price');
-                    console.log('myPrice', myPrice);
-
-                    myTotal = myParent.find('.totalClass');
-
-                    let getPriceValue = Number(myPrice);
-                    let getInputValue = Number($(this).val());
-                    let result = getPriceValue * getInputValue;
-                    console.log(getPriceValue);
-                    console.log(getInputValue);
-                    console.log(result);
-                    myTotal.text(result);
-
-                    getSum();
-                });
-
-
+                getSum(); // Recalculate and update the total sum
             });
         });
-
     </script>
 </body>
 
