@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">HR 表單</h1>
+                <form action="/action_page.php">
+                    <div class="mb-3 mt-3">
+                        <label for="name" class="form-label">名字</label>
+                        <input type="email" class="form-control" id="name" placeholder="Enter 名字" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="desc" class="form-label">學歷</label>
+                        <input type="password" class="form-control" id="desc" placeholder="Enter 學歷" name="desc">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">電話</label>
+                        <input type="phone" class="form-control" id="phone" placeholder="Enter 電話" name="phone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id" class="form-label">身分證字號</label>
+                        <input type="id" class="form-control" id="id" placeholder="Enter 身分證字號" name="id">
+                    </div>
+                    <label for="time" class="form-label">總年資:</label>
+                    <select class="form-select">
+                        <option>總年資一年以下</option>
+                        <option>總年資一年</option>
+                        <option>總年資二年</option>
+                        <option>總年資三年</option>
+                        <option>總年資四年</option>
+                        <option>總年資五年以上</option>
+                    </select>
+                    <label for="sitting" class="form-label mt-3">應徵職位</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1"
+                            checked>工讀生
+                        <label class="form-check-label" for="radio1"></label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">約聘
+                        <label class="form-check-label" for="radio2"></label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="radio3" name="optradio" value="option3">正職
+                        <label class="form-check-label"></label>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="comment">自傳</label>
+                        <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
