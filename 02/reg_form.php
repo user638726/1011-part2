@@ -94,8 +94,7 @@
             <input type="reset" value="重置"></div>
     </form>
     <?php
-    include("../function.php");
-    starts('正三角形',21);
+    include("./function.php");
     ?>
     </body>
 </html>
